@@ -1,0 +1,49 @@
+---
+title: Input
+description: A text field with Motoko surface styles, hover and focus borders.
+---
+
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/input
+```
+
+## Usage
+
+```tsx
+import { Search } from "lucide-react"
+
+import { Input } from "@/components/ui/input"
+
+export default function Example() {
+  return (
+    <Input
+      label="Search"
+      placeholder="Search…"
+      icon={<Search />}
+      classNameInput="max-w-sm"
+      classNameLabel="text-base"
+    />
+  )
+}
+```
+
+## Props
+
+| Prop             | Type                                   | Description                           |
+| ---------------- | -------------------------------------- | ------------------------------------- |
+| `icon`           | `React.ReactNode`                      | Leading icon (left)                   |
+| `label`          | `string`                               | Label above the field                 |
+| `minLength`      | `number`                               | Minimum text length                   |
+| `maxLength`      | `number`                               | Maximum text length                   |
+| `value`          | `string`                               | Controlled value                      |
+| `placeholder`    | `string`                               | Placeholder text                      |
+| `disabled`       | `boolean`                              | Disables the field                    |
+| `name`           | `string`                               | Form field name                       |
+| `className`      | `string`                               | Classes on the container              |
+| `classNameInput` | `string`                               | Classes on the `<input>`              |
+| `classNameLabel` | `string`                               | Classes on the `<label>`              |
+| `onChange`       | `ChangeEventHandler<HTMLInputElement>` | Value change (for controlled `value`) |

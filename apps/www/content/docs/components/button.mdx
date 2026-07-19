@@ -1,0 +1,51 @@
+---
+title: Button
+description: A polished button with primary, secondary, and semantic variants.
+---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/button
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+export default function Example() {
+  return <Button>Click me</Button>
+}
+```
+
+## Variants
+
+| Variant               | Description                                  |
+| --------------------- | -------------------------------------------- |
+| `primary` / `default` | Gradient fill with inset highlight (default) |
+| `secondary`           | Soft bordered surface                        |
+| `outline`             | Bordered on background                       |
+| `ghost`               | Transparent until hover                      |
+| `destructive`         | Danger action                                |
+| `link`                | Text link style                              |
+
+## Sizes
+
+| Size      | Description          |
+| --------- | -------------------- |
+| `sm`      | Compact              |
+| `default` | Standard (`h-12`)    |
+| `lg`      | Large                |
+| `icon`    | Circular icon button |
+
+## Props
+
+| Prop         | Type                                                                         | Default   |
+| ------------ | ---------------------------------------------------------------------------- | --------- |
+| `variant`    | `primary \| secondary \| outline \| ghost \| destructive \| link \| default` | `primary` |
+| `size`       | `default \| sm \| lg \| icon`                                                | `default` |
+| `asChild`    | `boolean`                                                                    | `false`   |
+| `isDisabled` | `boolean`                                                                    | `false`   |

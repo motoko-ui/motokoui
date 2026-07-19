@@ -1,0 +1,115 @@
+---
+title: Select
+description: A compound dropdown with Motoko surface styles and a simple options kit.
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/select
+```
+
+## Usage
+
+### Compound API
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+export default function Example() {
+  return (
+    <Select defaultValue="system" placeholder="Theme">
+      <SelectTrigger>
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="light">Light</SelectItem>
+        <SelectItem value="dark">Dark</SelectItem>
+        <SelectItem value="system">System</SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}
+```
+
+### Options kit
+
+When you only need a flat list of options, use `SelectKit`:
+
+```tsx
+import { SelectKit } from "@/components/ui/select"
+
+export default function Example() {
+  return (
+    <SelectKit
+      placeholder="Pick a fruit"
+      options={[
+        { value: "apple", label: "Apple" },
+        { value: "banana", label: "Banana" },
+      ]}
+    />
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<Select>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem />
+  </SelectContent>
+</Select>
+```
+
+## Props
+
+### Select
+
+| Prop            | Type                      | Default     |
+| --------------- | ------------------------- | ----------- |
+| `value`         | `string`                  | —           |
+| `defaultValue`  | `string`                  | `""`        |
+| `onValueChange` | `(value: string) => void` | —           |
+| `placeholder`   | `ReactNode`               | `"Select…"` |
+| `disabled`      | `boolean`                 | `false`     |
+| `className`     | `string`                  | —           |
+
+### SelectTrigger
+
+| Prop       | Type                | Default     |
+| ---------- | ------------------- | ----------- |
+| `size`     | `"sm" \| "default"` | `"default"` |
+| `disabled` | `boolean`           | `false`     |
+
+### SelectItem
+
+| Prop       | Type      | Default  |
+| ---------- | --------- | -------- |
+| `value`    | `string`  | required |
+| `disabled` | `boolean` | `false`  |
+
+### SelectKit
+
+| Prop               | Type                                    | Default     |
+| ------------------ | --------------------------------------- | ----------- |
+| `options`          | `{ value: string; label: ReactNode }[]` | required    |
+| `value`            | `string`                                | —           |
+| `defaultValue`     | `string`                                | —           |
+| `onValueChange`    | `(value: string) => void`               | —           |
+| `placeholder`      | `ReactNode`                             | —           |
+| `disabled`         | `boolean`                               | `false`     |
+| `className`        | `string`                                | —           |
+| `classNameTrigger` | `string`                                | —           |
+| `size`             | `"sm" \| "default"`                     | `"default"` |
