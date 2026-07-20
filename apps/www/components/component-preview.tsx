@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { ButtonDemo } from "@/registry/example/button-demo"
 import { InputDemo } from "@/registry/example/input-demo"
+import { RainbowButtonDemo } from "@/registry/example/rainbow-button-demo"
 import { SelectDemo } from "@/registry/example/select-demo"
 
 import { readDemoCode, type DemoName } from "@/lib/demo-source"
@@ -9,6 +10,7 @@ import { ComponentSource } from "@/components/component-source"
 
 const demos = {
   "button-demo": ButtonDemo,
+  "rainbow-button-demo": RainbowButtonDemo,
   "input-demo": InputDemo,
   "select-demo": SelectDemo,
 } as const satisfies Record<DemoName, React.ComponentType>

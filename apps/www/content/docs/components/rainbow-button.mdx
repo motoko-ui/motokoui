@@ -1,0 +1,39 @@
+---
+title: Rainbow Button
+description: A black (white in dark mode) button with an animated rainbow border.
+---
+
+<ComponentPreview name="rainbow-button-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/rainbow-button
+```
+
+## Usage
+
+```tsx
+import { RainbowButton } from "@/components/ui/rainbow-button"
+
+export default function Example() {
+  return <RainbowButton>Click me</RainbowButton>
+}
+```
+
+## Sizes
+
+| Size      | Description          |
+| --------- | -------------------- |
+| `sm`      | Compact              |
+| `default` | Standard (`h-12`)    |
+| `lg`      | Large                |
+| `icon`    | Circular icon button |
+
+## Props
+
+| Prop         | Type                          | Default   |
+| ------------ | ----------------------------- | --------- |
+| `size`       | `default \| sm \| lg \| icon` | `default` |
+| `asChild`    | `boolean`                     | `false`   |
+| `isDisabled` | `boolean`                     | `false`   |

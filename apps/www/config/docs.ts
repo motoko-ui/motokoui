@@ -29,14 +29,23 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Components",
-      href: "/docs/components",
+      title: "Buttons",
       items: [
         {
           title: "Button",
           href: "/docs/components/button",
           items: [],
         },
+        {
+          title: "Rainbow Button",
+          href: "/docs/components/rainbow-button",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Inputs & Forms",
+      items: [
         {
           title: "Input",
           href: "/docs/components/input",

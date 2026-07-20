@@ -1,8 +1,10 @@
 "use client"
 
+import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import type { NavItemWithChildren } from "@/types"
+import { ChevronRight } from "lucide-react"
 import { LayoutGroup, motion } from "motion/react"
 
 import { docsConfig } from "@/config/docs"
@@ -12,7 +14,6 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -88,6 +89,49 @@ function DocsSidebarNavItems({
   )
 }
 
+function DocsSidebarSection({
+  title,
+  items,
+  pathname,
+}: {
+  title: string
+  items: NavItemWithChildren[]
+  pathname: string
+}) {
+  const [open, setOpen] = React.useState(true)
+
+  return (
+    <SidebarGroup className="gap-0 p-0 py-0.5">
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-expanded={open}
+        className="text-muted-foreground/80 hover:text-foreground flex h-6 w-full cursor-pointer items-center gap-1 rounded-md px-2 text-[0.65rem] font-semibold tracking-wider uppercase transition-colors"
+      >
+        <ChevronRight
+          className={cn(
+            "size-3 shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.2,0,0,1)]",
+            open && "rotate-90"
+          )}
+        />
+        <span className="truncate">{title}</span>
+      </button>
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows] duration-200 ease-[cubic-bezier(0.2,0,0,1)]",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        )}
+      >
+        <div className="overflow-hidden">
+          <SidebarGroupContent>
+            <DocsSidebarNavItems items={items} pathname={pathname} />
+          </SidebarGroupContent>
+        </div>
+      </div>
+    </SidebarGroup>
+  )
+}
+
 export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
@@ -103,17 +147,12 @@ export function DocsSidebar({
         <div className="h-(--top-spacing) shrink-0" />
         <LayoutGroup id="docs-sidebar">
           {docsConfig.sidebarNav.map((section) => (
-            <SidebarGroup key={section.title} className="gap-1 py-2">
-              <SidebarGroupLabel className="text-muted-foreground/80 mb-1 px-2.5 text-[0.7rem] font-semibold tracking-wider uppercase">
-                {section.title}
-              </SidebarGroupLabel>
-              <SidebarGroupContent>
-                <DocsSidebarNavItems
-                  items={section.items ?? []}
-                  pathname={pathname}
-                />
-              </SidebarGroupContent>
-            </SidebarGroup>
+            <DocsSidebarSection
+              key={section.title}
+              title={section.title}
+              items={section.items ?? []}
+              pathname={pathname}
+            />
           ))}
         </LayoutGroup>
       </SidebarContent>

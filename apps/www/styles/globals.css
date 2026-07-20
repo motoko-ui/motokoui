@@ -123,6 +123,14 @@
   --chart-yellow: var(--primary-05);
   --chart-min: var(--shade-08);
 
+  /* Rainbow button */
+  --rainbow-1: hsl(0 100% 63%);
+  --rainbow-2: hsl(270 100% 63%);
+  --rainbow-3: hsl(210 100% 63%);
+  --rainbow-4: hsl(195 100% 63%);
+  --rainbow-5: hsl(90 100% 63%);
+  --rainbow-speed: 2s;
+
   /* Tailwind-facing aliases */
   --color-black: #000;
   --color-white: #fff;
@@ -370,6 +378,17 @@
   --text-button--line-height: var(--text-button--line-height);
   --text-button--letter-spacing: var(--text-button--letter-spacing);
   --text-button--font-weight: var(--text-button--font-weight);
+
+  --animate-rainbow: rainbow var(--rainbow-speed, 2s) infinite linear;
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
 }
 
 @layer base {

@@ -3,6 +3,7 @@ import path from "node:path"
 
 export const demoSources = {
   "button-demo": "registry/example/button-demo.tsx",
+  "rainbow-button-demo": "registry/example/rainbow-button-demo.tsx",
   "input-demo": "registry/example/input-demo.tsx",
   "select-demo": "registry/example/select-demo.tsx",
 } as const
