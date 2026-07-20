@@ -1,0 +1,68 @@
+---
+title: Tabs
+description: Animated pill tabs with the same soft motion used in Preview/Code.
+---
+
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/tabs
+```
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export default function Example() {
+  return (
+    <Tabs defaultValue="account">
+      <TabsList>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">Account panel</TabsContent>
+      <TabsContent value="password">Password panel</TabsContent>
+    </Tabs>
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<Tabs>
+  <TabsList>
+    <TabsTrigger />
+  </TabsList>
+  <TabsContent />
+</Tabs>
+```
+
+## Props
+
+### Tabs
+
+| Prop               | Type                      | Default |
+| ------------------ | ------------------------- | ------- |
+| `value`            | `string`                  | —       |
+| `defaultValue`     | `string`                  | `""`    |
+| `onValueChange`    | `(value: string) => void` | —       |
+| `disableAnimation` | `boolean`                 | `false` |
+| `className`        | `string`                  | —       |
+
+### TabsTrigger
+
+| Prop       | Type      | Default  |
+| ---------- | --------- | -------- |
+| `value`    | `string`  | required |
+| `disabled` | `boolean` | `false`  |
+
+### TabsContent
+
+| Prop         | Type      | Default  |
+| ------------ | --------- | -------- |
+| `value`      | `string`  | required |
+| `forceMount` | `boolean` | `false`  |

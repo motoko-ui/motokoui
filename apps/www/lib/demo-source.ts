@@ -6,6 +6,7 @@ export const demoSources = {
   "rainbow-button-demo": "registry/example/rainbow-button-demo.tsx",
   "input-demo": "registry/example/input-demo.tsx",
   "select-demo": "registry/example/select-demo.tsx",
+  "tabs-demo": "registry/example/tabs-demo.tsx",
 } as const
 
 export type DemoName = keyof typeof demoSources

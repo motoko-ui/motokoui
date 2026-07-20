@@ -58,6 +58,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Navigation",
+      items: [
+        {
+          title: "Tabs",
+          href: "/docs/components/tabs",
+          items: [],
+        },
+      ],
+    },
   ],
 }
 
