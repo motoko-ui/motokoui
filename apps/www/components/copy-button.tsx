@@ -31,7 +31,7 @@ export function CopyButton({
       title={hasCopied ? "Copied" : "Copy to Clipboard"}
       {...props}
       className={cn(
-        "text-muted-foreground hover:text-foreground hover:bg-muted relative inline-flex size-8 items-center justify-center rounded-full",
+        "text-muted-foreground hover:text-foreground hover:bg-muted relative inline-flex size-8 cursor-pointer items-center justify-center rounded-full",
         className
       )}
       onClick={async (event) => {

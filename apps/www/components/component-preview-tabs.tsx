@@ -58,7 +58,7 @@ export function ComponentPreviewTabs({
                     aria-selected={isActive}
                     onClick={() => setTab(item.id)}
                     className={cn(
-                      "relative z-10 rounded-xl px-3.5 py-1.5 text-sm font-medium transition-colors",
+                      "relative z-10 cursor-pointer rounded-xl px-3.5 py-1.5 text-sm font-medium transition-colors",
                       isActive
                         ? "text-foreground"
                         : "text-muted-foreground hover:text-foreground"

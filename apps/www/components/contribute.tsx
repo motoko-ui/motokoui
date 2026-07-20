@@ -1,19 +1,10 @@
 import Link from "next/link"
 import { BugIcon, LightbulbIcon } from "lucide-react"
 
-import { siteConfig } from "@/config/site"
-import { getGitHubIssueUrl } from "@/lib/github"
-
-function getGithubOwnerRepo(githubUrl: string) {
-  const match = githubUrl.match(/github\.com\/([^/]+)\/([^/]+)/)
-  if (!match) {
-    return { owner: "motoko-ui", repo: "motokoui" }
-  }
-  return { owner: match[1], repo: match[2].replace(/\.git$/, "") }
-}
+import { getGitHubIssueUrl, getGithubOwnerRepo } from "@/lib/github"
 
 export function Contribute({ pageUrl }: { pageUrl: string }) {
-  const { owner, repo } = getGithubOwnerRepo(siteConfig.links.github)
+  const { owner, repo } = getGithubOwnerRepo()
 
   const contributeLinks = [
     {

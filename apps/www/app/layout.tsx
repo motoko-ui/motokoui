@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="layout-fixed">
       <body
         className={cn(
-          "bg-background text-foreground group/body flex min-h-svh flex-col overscroll-none font-sans antialiased [--footer-height:4rem] [--header-height:3.5rem]",
+          "bg-background text-foreground group/body flex min-h-svh flex-col overscroll-none font-sans antialiased [--footer-height:4rem] [--header-height:4.75rem]",
           fontVariables
         )}
       >
