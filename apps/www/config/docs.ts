@@ -66,6 +66,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/tabs",
           items: [],
         },
+        {
+          title: "Notch",
+          href: "/docs/components/notch",
+          items: [],
+        },
       ],
     },
   ],

@@ -1,0 +1,87 @@
+---
+title: Notch
+description: A morphing black toolbar — the shell expands into options with staggered motion.
+---
+
+<ComponentPreview name="notch-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/notch
+```
+
+## Usage
+
+```tsx
+import { Notch } from "@/components/ui/notch"
+
+export default function Example() {
+  return (
+    <Notch
+      items={[
+        {
+          id: "tool",
+          label: "Tool",
+          defaultValue: "select",
+          options: [
+            { id: "select", label: "Select" },
+            { id: "draw", label: "Draw" },
+            { id: "erase", label: "Erase" },
+          ],
+        },
+        {
+          id: "mode",
+          label: "Mode",
+          defaultValue: "design",
+          options: [
+            { id: "design", label: "Design" },
+            { id: "prototype", label: "Prototype" },
+          ],
+        },
+      ]}
+    />
+  )
+}
+```
+
+Click a group — the shell morphs and reveals its options. Escape or click outside to return.
+
+## Props
+
+### Notch
+
+| Prop                | Type                                 | Default    |
+| ------------------- | ------------------------------------ | ---------- |
+| `items`             | `NotchItem[]`                        | required   |
+| `position`          | `"top" \| "bottom" \| "inline"`      | `"bottom"` |
+| `align`             | `"start" \| "center" \| "end"`       | `"center"` |
+| `closeOnSelect`     | `boolean`                            | `true`     |
+| `showSelectedValue` | `boolean`                            | `true`     |
+| `showDividers`      | `boolean`                            | `true`     |
+| `offset`            | `number`                             | `24`       |
+| `reveal`            | `boolean`                            | `true`     |
+| `onItemChange`      | `(itemId, optionId, option) => void` | —          |
+
+`inline` keeps the shell in normal flow (useful in docs previews).
+
+### NotchItem
+
+| Prop           | Type                                              | Default  |
+| -------------- | ------------------------------------------------- | -------- |
+| `id`           | `string`                                          | required |
+| `label`        | `ReactNode`                                       | required |
+| `icon`         | `ReactNode`                                       | —        |
+| `options`      | `NotchOption[]`                                   | required |
+| `value`        | `string`                                          | —        |
+| `defaultValue` | `string`                                          | —        |
+| `showValue`    | `boolean`                                         | —        |
+| `onChange`     | `(optionId: string, option: NotchOption) => void` | —        |
+
+### NotchOption
+
+| Prop    | Type        | Default  |
+| ------- | ----------- | -------- |
+| `id`    | `string`    | required |
+| `label` | `ReactNode` | required |
+| `icon`  | `ReactNode` | —        |

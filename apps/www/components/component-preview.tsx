@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { ButtonDemo } from "@/registry/example/button-demo"
 import { InputDemo } from "@/registry/example/input-demo"
+import { NotchDemo } from "@/registry/example/notch-demo"
 import { RainbowButtonDemo } from "@/registry/example/rainbow-button-demo"
 import { SelectDemo } from "@/registry/example/select-demo"
 import { TabsDemo } from "@/registry/example/tabs-demo"
@@ -15,6 +16,7 @@ const demos = {
   "input-demo": InputDemo,
   "select-demo": SelectDemo,
   "tabs-demo": TabsDemo,
+  "notch-demo": NotchDemo,
 } as const satisfies Record<DemoName, React.ComponentType>
 
 export async function ComponentPreview({
