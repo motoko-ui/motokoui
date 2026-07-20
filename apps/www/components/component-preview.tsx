@@ -6,6 +6,7 @@ import { NotchDemo } from "@/registry/example/notch-demo"
 import { RainbowButtonDemo } from "@/registry/example/rainbow-button-demo"
 import { SelectDemo } from "@/registry/example/select-demo"
 import { TabsDemo } from "@/registry/example/tabs-demo"
+import { TooltipDemo } from "@/registry/example/tooltip-demo"
 
 import { readDemoCode, type DemoName } from "@/lib/demo-source"
 import { ComponentPreviewTabs } from "@/components/component-preview-tabs"
@@ -19,6 +20,7 @@ const demos = {
   "tabs-demo": TabsDemo,
   "notch-demo": NotchDemo,
   "modal-demo": ModalDemo,
+  "tooltip-demo": TooltipDemo,
 } as const satisfies Record<DemoName, React.ComponentType>
 
 export async function ComponentPreview({

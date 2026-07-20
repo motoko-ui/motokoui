@@ -81,6 +81,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/modal",
           items: [],
         },
+        {
+          title: "Tooltip",
+          href: "/docs/components/tooltip",
+          items: [],
+        },
       ],
     },
   ],

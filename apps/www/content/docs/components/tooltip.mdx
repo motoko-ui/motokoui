@@ -1,0 +1,63 @@
+---
+title: Tooltip
+description: A compact Motoko hint that appears on hover or focus.
+---
+
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/tooltip
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+
+export default function Example() {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="secondary">Hover me</Button>
+      </TooltipTrigger>
+      <TooltipContent>Add to library</TooltipContent>
+    </Tooltip>
+  )
+}
+```
+
+Wrap your app (or a subtree) in `TooltipProvider` once for shared delay settings. The site root already includes one.
+
+## Anatomy
+
+```tsx
+<Tooltip>
+  <TooltipTrigger />
+  <TooltipContent />
+</Tooltip>
+```
+
+## Props
+
+### TooltipProvider
+
+| Prop                | Type     | Default |
+| ------------------- | -------- | ------- |
+| `delayDuration`     | `number` | `200`   |
+| `skipDelayDuration` | `number` | `100`   |
+
+### TooltipContent
+
+| Prop         | Type                                     | Default    |
+| ------------ | ---------------------------------------- | ---------- |
+| `side`       | `"top" \| "right" \| "bottom" \| "left"` | `"top"`    |
+| `sideOffset` | `number`                                 | `8`        |
+| `align`      | `"start" \| "center" \| "end"`           | `"center"` |
+| `className`  | `string`                                 | —          |
