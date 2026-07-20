@@ -73,6 +73,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Modal & Popovers",
+      items: [
+        {
+          title: "Modal",
+          href: "/docs/components/modal",
+          items: [],
+        },
+      ],
+    },
   ],
 }
 

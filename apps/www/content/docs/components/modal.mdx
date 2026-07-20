@@ -1,0 +1,86 @@
+---
+title: Modal
+description: A centered dialog with soft Motoko motion — blur, scale, and spring settle.
+---
+
+<ComponentPreview name="modal-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/modal
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+import {
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTrigger,
+} from "@/components/ui/modal"
+
+export default function Example() {
+  return (
+    <Modal>
+      <ModalTrigger asChild>
+        <Button>Open modal</Button>
+      </ModalTrigger>
+      <ModalContent>
+        <ModalHeader>
+          <ModalTitle>Confirm changes</ModalTitle>
+          <ModalDescription>
+            This will update your workspace settings.
+          </ModalDescription>
+        </ModalHeader>
+        <ModalFooter>
+          <ModalClose asChild>
+            <Button variant="secondary">Cancel</Button>
+          </ModalClose>
+          <Button>Save changes</Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<Modal>
+  <ModalTrigger />
+  <ModalContent>
+    <ModalHeader>
+      <ModalTitle />
+      <ModalDescription />
+    </ModalHeader>
+    <ModalFooter>
+      <ModalClose />
+    </ModalFooter>
+  </ModalContent>
+</Modal>
+```
+
+## Props
+
+### Modal
+
+| Prop           | Type                      | Default |
+| -------------- | ------------------------- | ------- |
+| `open`         | `boolean`                 | —       |
+| `defaultOpen`  | `boolean`                 | `false` |
+| `onOpenChange` | `(open: boolean) => void` | —       |
+
+### ModalContent
+
+| Prop              | Type      | Default |
+| ----------------- | --------- | ------- |
+| `showCloseButton` | `boolean` | `true`  |
+| `className`       | `string`  | —       |

@@ -1,0 +1,17 @@
+export {
+  Modal,
+  ModalTrigger,
+  ModalPortal,
+  ModalClose,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalTitle,
+  ModalDescription,
+  type ModalProps,
+  type ModalContentProps,
+  type ModalHeaderProps,
+  type ModalFooterProps,
+  type ModalTitleProps,
+  type ModalDescriptionProps,
+} from "@/registry/motokoui/modal"

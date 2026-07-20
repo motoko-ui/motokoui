@@ -8,6 +8,7 @@ export const demoSources = {
   "select-demo": "registry/example/select-demo.tsx",
   "tabs-demo": "registry/example/tabs-demo.tsx",
   "notch-demo": "registry/example/notch-demo.tsx",
+  "modal-demo": "registry/example/modal-demo.tsx",
 } as const
 
 export type DemoName = keyof typeof demoSources
