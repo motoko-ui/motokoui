@@ -98,7 +98,7 @@ It's to contribute something that makes the React ecosystem a little more beauti
 
 The documentation includes installation guides, usage examples, component APIs, templates, and best practices to help you build modern applications faster.
 
-Visit **https://motoko-ui.com** to get started.
+Visit **https://motokoui.com** to get started.
 
 ---
 
