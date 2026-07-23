@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button",
+  "title": "Rainbow Button",
+  "description": "A black (white in dark mode) button with an animated rainbow border.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/motokoui/rainbow-button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst rainbowButtonVariants = cva(\n  [\n    \"relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2\",\n    \"animate-rainbow border-0 font-medium outline-none select-none\",\n    \"bg-[length:200%] [background-clip:padding-box,border-box,border-box] [background-origin:border-box]\",\n    \"[border:calc(0.125rem)_solid_transparent]\",\n    \"transition-[transform,box-shadow,opacity] duration-200 ease-[cubic-bezier(0.2,0,0,1)]\",\n    \"before:pointer-events-none before:absolute before:bottom-[-20%] before:left-1/2 before:z-[-1]\",\n    \"before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow\",\n    \"before:bg-[linear-gradient(90deg,var(--rainbow-1),var(--rainbow-5),var(--rainbow-3),var(--rainbow-4),var(--rainbow-2))]\",\n    \"before:bg-[length:200%] before:[filter:blur(0.75rem)]\",\n    \"fill-white text-white\",\n    \"bg-[linear-gradient(#2C2C2C,#282828),linear-gradient(#2C2C2C_50%,rgba(44,44,44,0.6)_80%,rgba(44,44,44,0)),linear-gradient(90deg,var(--rainbow-1),var(--rainbow-5),var(--rainbow-3),var(--rainbow-4),var(--rainbow-2))]\",\n    \"shadow-[inset_2px_0_8px_2px_rgba(248,248,248,0.2)]\",\n    \"hover:shadow-[inset_2px_0_8px_2px_rgba(248,248,248,0)]\",\n    \"active:scale-[0.99] active:shadow-[inset_0_2px_6px_2px_rgba(0,0,0,0.35)]\",\n    \"dark:fill-black dark:text-black\",\n    \"dark:bg-[linear-gradient(#f7f7f7,#ffffff),linear-gradient(#ffffff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--rainbow-1),var(--rainbow-5),var(--rainbow-3),var(--rainbow-4),var(--rainbow-2))]\",\n    \"dark:shadow-[inset_2px_0_8px_2px_rgba(24,24,24,0.12)]\",\n    \"dark:hover:shadow-[inset_2px_0_8px_2px_rgba(24,24,24,0)]\",\n    \"dark:active:shadow-[inset_0_2px_6px_2px_rgba(0,0,0,0.12)]\",\n    \"disabled:pointer-events-none disabled:opacity-50\",\n    \"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n    \"focus-visible:ring-2 focus-visible:ring-ring/50\",\n  ].join(\" \"),\n  {\n    variants: {\n      size: {\n        default: \"h-12 rounded-3xl px-7 text-sm\",\n        sm: \"h-10 rounded-3xl px-5 text-sm\",\n        lg: \"h-14 rounded-3xl px-8 text-base\",\n        icon: \"size-10 justify-center rounded-full p-0\",\n      },\n    },\n    defaultVariants: {\n      size: \"default\",\n    },\n  }\n)\n\nexport type RainbowButtonVariantProps = VariantProps<\n  typeof rainbowButtonVariants\n>\n\nexport interface RainbowButtonProps\n  extends\n    React.ButtonHTMLAttributes<HTMLButtonElement>,\n    RainbowButtonVariantProps {\n  asChild?: boolean\n  isDisabled?: boolean\n}\n\nconst RainbowButton = React.forwardRef<HTMLButtonElement, RainbowButtonProps>(\n  (\n    {\n      className,\n      size = \"default\",\n      asChild = false,\n      isDisabled,\n      onClick,\n      type,\n      ...props\n    },\n    ref\n  ) => {\n    const Comp = asChild ? Slot : \"button\"\n\n    return (\n      <Comp\n        ref={ref}\n        data-slot=\"rainbow-button\"\n        type={asChild ? undefined : type || \"button\"}\n        disabled={isDisabled || props.disabled}\n        onClick={onClick}\n        className={cn(rainbowButtonVariants({ size }), className)}\n        {...props}\n      />\n    )\n  }\n)\nRainbowButton.displayName = \"RainbowButton\"\n\nexport { RainbowButton, rainbowButtonVariants }\n",
+      "type": "registry:ui",
+      "target": "components/ui/rainbow-button.tsx"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-rainbow": "rainbow var(--rainbow-speed, 2s) infinite linear"
+    },
+    "light": {
+      "rainbow-1": "hsl(0 100% 63%)",
+      "rainbow-2": "hsl(270 100% 63%)",
+      "rainbow-3": "hsl(210 100% 63%)",
+      "rainbow-4": "hsl(195 100% 63%)",
+      "rainbow-5": "hsl(90 100% 63%)",
+      "rainbow-speed": "2s"
+    },
+    "dark": {
+      "rainbow-1": "hsl(0 100% 63%)",
+      "rainbow-2": "hsl(270 100% 63%)",
+      "rainbow-3": "hsl(210 100% 63%)",
+      "rainbow-4": "hsl(195 100% 63%)",
+      "rainbow-5": "hsl(90 100% 63%)",
+      "rainbow-speed": "2s"
+    }
+  },
+  "css": {
+    "@keyframes rainbow": {
+      "0%": {
+        "background-position": "0%"
+      },
+      "100%": {
+        "background-position": "200%"
+      }
+    }
+  },
+  "type": "registry:ui"
+}

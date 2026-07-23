@@ -9,16 +9,20 @@ Use this skill when adding components, docs pages, or registry entries to Motoko
 
 ## Layout
 
-- Components (future): `apps/www/registry/motokoui/`
+- Components: `apps/www/registry/motokoui/`
+- Registry catalog: `apps/www/registry.json`
+- Built registry: `apps/www/public/r/` (via `pnpm --filter=www build:registry`)
 - Docs: `apps/www/content/docs/`
 - Site config: `apps/www/config/site.ts`, `apps/www/config/docs.ts`
 
 ## Workflow
 
 1. Add or update the component under `registry/motokoui/`
-2. Add a docs MDX page under `content/docs/`
-3. Register the page in `config/docs.ts` sidebar if needed
-4. Run `pnpm --filter=www dev` and verify `/docs`
+2. Add an item entry to `apps/www/registry.json` (name, deps, files, cssVars if needed)
+3. Add a docs MDX page under `content/docs/`
+4. Register the page in `config/docs.ts` sidebar if needed
+5. Run `pnpm --filter=www build:registry` then `pnpm --filter=www dev`
+6. Verify `/docs` and `/r/<name>.json`
 
 ## Rules
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "A text field with Motoko surface styles, hover and focus borders.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/motokoui/input.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface InputProps {\n  /** Leading icon inside the field (left side). */\n  icon?: React.ReactNode\n  /** Label rendered above the field. Linked to the input via `htmlFor` / `id`. */\n  label?: string\n  /** Minimum text length. */\n  minLength?: number\n  /** Maximum text length. */\n  maxLength?: number\n  /** Controlled value. */\n  value?: string\n  /** Placeholder text shown when the field is empty. */\n  placeholder?: string\n  /** Disables the field and skips hover border styles. */\n  disabled?: boolean\n  /** Field name for form submission. */\n  name?: string\n  /** Extra classes for the container. */\n  className?: string\n  /** Extra classes on the `<input>`. */\n  classNameInput?: string\n  /** Extra classes on the `<label>`. */\n  classNameLabel?: string\n  /** Called when the value changes. Required when using controlled `value`. */\n  onChange?: React.ChangeEventHandler<HTMLInputElement>\n}\n\nconst Input = React.forwardRef<HTMLInputElement, InputProps>(\n  (\n    {\n      icon,\n      label,\n      minLength,\n      maxLength,\n      value,\n      placeholder,\n      disabled,\n      name,\n      className,\n      classNameInput,\n      classNameLabel,\n      onChange,\n    },\n    ref\n  ) => {\n    const inputId = React.useId()\n\n    return (\n      <div className={cn(\"flex w-full flex-col gap-2\", className)}>\n        {label ? (\n          <label\n            htmlFor={inputId}\n            className={cn(\n              \"text-t-primary text-sm font-semibold tracking-tight\",\n              classNameLabel\n            )}\n          >\n            {label}\n          </label>\n        ) : null}\n        <div className=\"relative w-full\">\n          {icon ? (\n            <span\n              aria-hidden\n              className=\"text-t-secondary pointer-events-none absolute top-1/2 left-3.5 z-10 flex size-4 -translate-y-1/2 items-center justify-center [&_svg]:size-4 [&_svg]:shrink-0\"\n            >\n              {icon}\n            </span>\n          ) : null}\n          <input\n            id={inputId}\n            ref={ref}\n            data-slot=\"input\"\n            type=\"text\"\n            name={name}\n            value={value}\n            placeholder={placeholder}\n            disabled={disabled}\n            minLength={minLength}\n            maxLength={maxLength}\n            onChange={onChange}\n            className={cn(\n              \"bg-b-surface2 placeholder:text-t-secondary/50 focus:border-s-highlight enabled:hover:border-s-highlight h-12 w-full rounded-2xl border-2 px-3 transition-colors outline-none disabled:cursor-not-allowed disabled:opacity-50\",\n              icon && \"pl-10\",\n              classNameInput\n            )}\n          />\n        </div>\n      </div>\n    )\n  }\n)\n\nInput.displayName = \"Input\"\n\nexport { Input }\n",
+      "type": "registry:ui",
+      "target": "components/ui/input.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,5 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "motokoui",
   "homepage": "https://motokoui.com",
-  "items": []
+  "include": ["apps/www/registry.json"]
 }

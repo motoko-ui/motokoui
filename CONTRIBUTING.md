@@ -24,7 +24,7 @@ Thanks for your interest in contributing.
 
 - `apps/www` — marketing site and documentation
 - `apps/www/content/docs` — MDX docs pages
-- `apps/www/registry` — component registry (empty for now)
+- `apps/www/registry` — component sources; build with `pnpm --filter=www build:registry` → `public/r`
 - `skills/` — agent skills
 
 ## Pull requests

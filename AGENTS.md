@@ -13,7 +13,8 @@ This monorepo hosts Motoko UI: a Next.js docs + marketing site for React compone
 
 - Prefer existing patterns in `apps/www` over inventing new structure
 - Keep changes scoped; do not port Magic UI component content unless asked
-- Registry components will live in `apps/www/registry/motokoui` when added
+- Registry sources live in `apps/www/registry/motokoui`
+- Built registry JSON is generated to `apps/www/public/r` via `pnpm --filter=www build:registry`
 - Docs live in `apps/www/content/docs` as MDX
 
 ## Before Writing Code
