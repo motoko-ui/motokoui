@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import { Analytics } from "@vercel/analytics/next"
 
 import { fontVariables } from "@/lib/fonts"
 import { absoluteUrl, cn, constructMetadata } from "@/lib/utils"
@@ -36,6 +37,7 @@ export default function RootLayout({
           fontVariables
         )}
       >
+        <Analytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider>
             {children}
