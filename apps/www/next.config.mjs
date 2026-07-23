@@ -26,6 +26,15 @@ const nextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        // shadcn CLI resolves @motokoui/button to /r/button (no .json suffix)
+        source: "/r/:name([^./]+)",
+        destination: "/r/:name.json",
+      },
+    ]
+  },
   async headers() {
     return [
       {
