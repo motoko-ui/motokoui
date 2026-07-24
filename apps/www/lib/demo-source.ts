@@ -7,6 +7,7 @@ export const demoSources = {
   "input-demo": "registry/example/input-demo.tsx",
   "select-demo": "registry/example/select-demo.tsx",
   "tabs-demo": "registry/example/tabs-demo.tsx",
+  "accordion-demo": "registry/example/accordion-demo.tsx",
   "notch-demo": "registry/example/notch-demo.tsx",
   "modal-demo": "registry/example/modal-demo.tsx",
   "tooltip-demo": "registry/example/tooltip-demo.tsx",

@@ -1,0 +1,88 @@
+---
+title: Accordion
+description: Soft Motoko disclosure panels — smooth height settle, content fade, and a rotating chevron.
+---
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add @motokoui/accordion
+```
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+export default function Example() {
+  return (
+    <Accordion type="single" collapsible defaultValue="item-1">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It builds on Radix Accordion for keyboard and screen reader
+          support.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is the motion interruptible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. Open and close mid-animation retargets smoothly instead of
+          restarting.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+```
+
+## Anatomy
+
+```tsx
+<Accordion>
+  <AccordionItem>
+    <AccordionTrigger />
+    <AccordionContent />
+  </AccordionItem>
+</Accordion>
+```
+
+## Props
+
+### Accordion
+
+| Prop               | Type                                  | Default  |
+| ------------------ | ------------------------------------- | -------- |
+| `type`             | `"single" \| "multiple"`              | required |
+| `value`            | `string \| string[]`                  | —        |
+| `defaultValue`     | `string \| string[]`                  | —        |
+| `onValueChange`    | `(value: string \| string[]) => void` | —        |
+| `collapsible`      | `boolean`                             | `false`  |
+| `disableAnimation` | `boolean`                             | `false`  |
+| `className`        | `string`                              | —        |
+
+### AccordionItem
+
+| Prop       | Type      | Default  |
+| ---------- | --------- | -------- |
+| `value`    | `string`  | required |
+| `disabled` | `boolean` | `false`  |
+
+### AccordionTrigger
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | —       |
+
+### AccordionContent
+
+| Prop        | Type     | Default |
+| ----------- | -------- | ------- |
+| `className` | `string` | —       |

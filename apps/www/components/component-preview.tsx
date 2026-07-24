@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import { AccordionDemo } from "@/registry/example/accordion-demo"
 import { ButtonDemo } from "@/registry/example/button-demo"
 import { InputDemo } from "@/registry/example/input-demo"
 import { ModalDemo } from "@/registry/example/modal-demo"
@@ -18,6 +19,7 @@ const demos = {
   "input-demo": InputDemo,
   "select-demo": SelectDemo,
   "tabs-demo": TabsDemo,
+  "accordion-demo": AccordionDemo,
   "notch-demo": NotchDemo,
   "modal-demo": ModalDemo,
   "tooltip-demo": TooltipDemo,
